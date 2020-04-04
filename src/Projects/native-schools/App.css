@@ -1,0 +1,23 @@
+/* CSS for the Writer App  */
+
+.ns_container {
+    height: inherit;
+    width: 100%;
+    margin: 0;
+}
+.ns_menu {
+    background-color: #2F2E50;
+    color: white;
+}
+
+.ns_submenu {
+    background-color: #54536F;
+}
+
+.ns_content {
+    background-color: #F2F2F2;
+}
+
+.ns_subcontainer {
+    display: contents;
+}
