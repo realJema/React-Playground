@@ -16,10 +16,13 @@ export default function Home() {
               <Link className="btn  btn-outline-dark" to="/">Home</Link>
             </li>
             <li>
-              <Link className="btn  btn-outline-dark" to="/moviesApp">Movies App</Link>
+              <Link className="btn  btn-outline-dark" to="/moviesapp">Movies App</Link>
             </li>
             <li>
               <Link className="btn  btn-outline-dark" to="/nativeschools">Schools</Link>
+            </li>
+            <li>
+              <Link className="btn  btn-outline-dark" to="/writerapp">Writer</Link>
             </li>
           </ul>
         </div>

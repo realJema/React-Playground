@@ -8,8 +8,14 @@
 .ns_menu {
     background-color: #2F2E50;
     color: white;
+    padding: 0;
 }
-
+.ns_menu > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 .ns_submenu {
     background-color: #54536F;
 }
@@ -20,4 +26,21 @@
 
 .ns_subcontainer {
     display: contents;
+}
+
+.faIcons {
+    height: 35px;
+    width: 35px !important;
+}
+
+.ns_menu_links {
+    color: white;
+    width: 100%;
+    display: block;
+    padding: 16px 0;
+}
+
+.ns_menu_links:hover{
+    background-color: #54536F;
+    color: #2F2E50;
 }

@@ -18,10 +18,10 @@ export default function App() {
           <Route path="/nativeschools">
             <NativeSchools />
           </Route>
-          <Route path="/moviesApp">
+          <Route path="/moviesapp">
             <MoviesApp />
           </Route>
-          <Route path="/writerApp">
+          <Route path="/writerapp">
             <WriterApp />
           </Route>
           <Route path="/">
