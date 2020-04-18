@@ -1,0 +1,39 @@
+/* CSS for the ads App  */
+.card {
+    padding: 0;
+    background-image: url('../ads/Components/images/card.PNG');
+    height: 300px;
+}
+.card2{
+    background-image: url('../ads/Components/images/card.PNG');
+
+}
+.row {
+    margin: 0.5%;
+    margin-bottom: 0;
+}
+
+
+.no-padding {
+    padding: 0;
+}
+
+/* .left-spacing {
+    max-width: 49%;
+    margin-left: 0.5%;
+} */
+.right-spacing {
+    max-width: 49%;
+    margin-right: 1%;
+}
+.right-spacing-3{
+    
+    max-width: 24.5%;
+    margin-right: 0.45%;
+}
+
+.middle-spacing{
+    
+    max-width: 49%;
+    margin: 0 0.5%;
+}

@@ -24,6 +24,12 @@ export default function Home() {
             <li>
               <Link className="btn  btn-outline-dark" to="/writerapp">Writer</Link>
             </li>
+            <li>
+              <Link className="btn  btn-outline-dark" to="/counter">Counter</Link>
+            </li>
+            <li>
+              <Link className="btn  btn-outline-dark" to="/ads">Ads</Link>
+            </li>
           </ul>
         </div>
   );

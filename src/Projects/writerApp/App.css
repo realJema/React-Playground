@@ -12,6 +12,9 @@
     background-color: #f2f2f2;
     padding: 40px 25px;
 }
+.writer_content:focus {
+    outline: none;
+}
 .writer_display {
     background-color: #e6e6e6;
     display: -webkit-inline-box;
