@@ -2,18 +2,43 @@
 .card {
     padding: 0;
     background-image: url('../ads/Components/images/card.PNG');
-    height: 300px;
+    height: 15rem;
+    background-size: cover;
+}
+
+.col-12 {
+    padding: 0;
+    width: 100%;
 }
 .card2{
     background-image: url('../ads/Components/images/card.PNG');
 
+}
+.navbar {
+    padding: 0;
+    background-color: gainsboro;
+    margin-top: 2em;
+    height: 2em;
+}
+
+.fixed-bottom {
+    position: relative;
+}
+.carousel {
+    margin: 0;
+    padding: 0;
+}
+.carousel > .carousel-inner {
+    height: 35rem;
 }
 .row {
     margin: 0.5%;
     margin-bottom: 0;
 }
 
-
+.card-img-overlay {
+    top: auto;
+}
 .no-padding {
     padding: 0;
 }

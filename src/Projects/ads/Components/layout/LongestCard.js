@@ -5,7 +5,7 @@ class LongestCard extends React.Component {
     render () {
 
         return (
-            <div className="card bg-dark text-white col-md-12">
+            <div className="card bg-dark text-white col-12">
                 <div className="card-img-overlay">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
