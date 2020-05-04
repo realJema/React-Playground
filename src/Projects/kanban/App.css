@@ -67,10 +67,10 @@ ul {
 .card__title:before {
   display: inline-block;
   width: 1em;
-  content: "";
+  content: "\25B6 ";
 }
 .card__title--is-open:before {
-  content: "";
+  content: "\25BC ";
 }
 
 .checklist__task:first-child {
