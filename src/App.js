@@ -7,6 +7,7 @@ import {
 import MoviesApp from './Projects/moviesApp/App';
 import Counter from './Projects/counter/App';
 import Ads from './Projects/ads/App';
+import Kanban from './Projects/kanban/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
 import Home from './Home';
@@ -31,6 +32,9 @@ export default function App() {
           </Route>
           <Route path="/ads">
             <Ads />
+          </Route>
+          <Route path="/kanban">
+            <Kanban />
           </Route>
           <Route path="/">
             <Home />

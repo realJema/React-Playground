@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from './counter';
+import Position from './position';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
@@ -32,6 +33,7 @@ export default function WriterApp() {
 
         <Provider store={store}>
           <Counter/>
+          <Position/>
         </Provider>
         )
 };

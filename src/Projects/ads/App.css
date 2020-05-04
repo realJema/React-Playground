@@ -1,10 +1,4 @@
 /* CSS for the ads App  */
-.card {
-    padding: 0;
-    background-image: url('../ads/Components/images/card.PNG');
-    height: 15rem;
-    background-size: cover;
-}
 
 .col-12 {
     padding: 0;
