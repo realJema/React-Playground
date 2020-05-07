@@ -16,7 +16,7 @@ html, body, #root, .main_container {
 .main_container > ul {
     margin: 0;
     padding: 0; 
-    /* display: flex; */
+    justify-content: center;
 }
 
 .main_container > ul > li {
@@ -32,6 +32,7 @@ html, body, #root, .main_container {
     font-family: Open Sans;
     font-weight: 100;
     letter-spacing: 15px;
+    text-align: center;
 }
 
 footer {
