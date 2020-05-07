@@ -29,6 +29,9 @@ they can't be changed by the child, they are owned by the parent.
 React’s components can have mutable data inside this.state.
 state is limited to the component where it is defined and props can only be passed from parent to child, thats why we need frameworks like **redux**, to permit communication in the reverse direction and across children components 
 
+ a component’s internal state is kept to minimum because every time the state changes, the
+component is rendered again.
+
 ##### Events 
 Touch and Mouse Events
 ----------------------------------------------------------
@@ -75,4 +78,29 @@ render() {
         </div>
     )
 }
+```
+
+##### Forms 
+Controlled Components 
+A form component with a value or checked prop is called a controlled component. In a controlled component, the value rendered inside the element will always reflect the value of the prop. By default the user won’t be able to change it
+
+Uncontrolled Components
+Controlled components adhere to React’s principles and have their advantages. While uncontrolled components are an anti-pattern for how most other components are constructed in React, sometimes you don’t need to oversee the user input field by field
+
+##### Keys
+ Keys are unique identifiers that allow for fast lookups
+between trees for finding insertions, deletions, substitutions, and moves. Every time you create components
+in a loop, it’s a good idea to provide a key for each child in order to help the React Library match and avoid
+performance bottlenecks.
+
+##### Refs 
+Refs can be used as a string prop on any component, like so:
+```
+<input ref="myInput" />
+```
+The referenced DOM markup can then be accessed via this.refs, like so:
+```
+let input = this.refs.myInput;
+let inputValue = input.value;
+let inputRect = input.getBoundingClientRect();
 ```

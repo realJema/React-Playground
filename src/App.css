@@ -33,3 +33,11 @@ html, body, #root, .main_container {
     font-weight: 100;
     letter-spacing: 15px;
 }
+
+footer {
+    bottom: 0;
+    position: absolute;
+}
+.footer {
+    color: black;
+}

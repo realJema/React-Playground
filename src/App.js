@@ -10,6 +10,7 @@ import Ads from './Projects/ads/App';
 import Kanban from './Projects/kanban/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
+import Sponsors from './sponsors';
 import Home from './Home';
 
 export default function App() {
@@ -35,6 +36,9 @@ export default function App() {
           </Route>
           <Route path="/kanban">
             <Kanban />
+          </Route>
+          <Route path="/sponsors">
+            <Sponsors />
           </Route>
           <Route path="/">
             <Home />

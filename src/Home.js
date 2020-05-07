@@ -34,6 +34,9 @@ export default function Home() {
               <Link className="btn  btn-outline-dark" to="/kanban">Kanban</Link>
             </li>
           </ul>
+          <footer>
+            <Link className="footer" to="/sponsors"><p>Sponsored by</p></Link>
+          </footer>
         </div>
   );
 }
