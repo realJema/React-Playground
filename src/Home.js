@@ -13,22 +13,13 @@ export default function Home() {
           <h1 className="brand" >NATIVE</h1><br/>
           <ul className="row">
             <li>
-              <Link className="btn  btn-outline-dark" to="/">Home</Link>
+              <a className="btn  btn-outline-dark" href="https://selfmade.native237.com">Self Made</a>
             </li>
             <li>
-              <Link className="btn  btn-outline-dark" to="/moviesapp">Movies App</Link>
-            </li>
-            <li>
-              <Link className="btn  btn-outline-dark" to="/nativeschools">Schools</Link>
+              <a className="btn  btn-outline-dark" href="https://truestory.native237.com">True Story</a>
             </li>
             <li>
               <Link className="btn  btn-outline-dark" to="/writerapp">Writer</Link>
-            </li>
-            <li>
-              <Link className="btn  btn-outline-dark" to="/counter">Counter</Link>
-            </li>
-            <li>
-              <Link className="btn  btn-outline-dark" to="/ads">Ads</Link>
             </li>
             <li>
               <Link className="btn  btn-outline-dark" to="/kanban">Kanban</Link>
