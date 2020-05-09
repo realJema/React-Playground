@@ -104,3 +104,4 @@ let input = this.refs.myInput;
 let inputValue = input.value;
 let inputRect = input.getBoundingClientRect();
 ```
+Minor Updates
