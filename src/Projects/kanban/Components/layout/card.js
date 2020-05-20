@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import CheckList from "./checklist";
 import marked from "marked";
 
@@ -57,5 +57,7 @@ class Card extends Component {
       </div>
     );
   }
-}
+};
+
+
 export default Card;

@@ -1,15 +1,28 @@
-import React, { Component } from 'react';
-import List from './list';
+import React, { Component, PropTypes } from "react";
+import List from "./list";
 
 class KanbanBoard extends Component {
-render(){
+  render() {
     return (
-        <div className="app">
-            <List id='todo' title="To Do" cards={this.props.cards.filter((card) => card.status === "todo")} />
-            <List id='in-progress' title="In Progress" cards={this.props.cards.filter((card) => card.status === "in-progress")} />
-            <List id='done' title='Done' cards={this.props.cards.filter((card) => card.status === "done")} />
-        </div>
+      <div className="app">
+        <List
+          id="todo"
+          title="To Do"
+          cards={this.props.cards.filter((card) => card.status === "todo")}
+        />
+        <List
+          id="in-progress"
+          title="In Progress"
+          cards={this.props.cards.filter((card) => card.status === "in-progress")}
+        />
+        <List
+          id="done"
+          title="Done"
+          cards={this.props.cards.filter((card) => card.status === "done")}
+        />
+      </div>
     );
- }
-}
+  }
+};
+
 export default KanbanBoard;

@@ -104,3 +104,7 @@ let input = this.refs.myInput;
 let inputValue = input.value;
 let inputRect = input.getBoundingClientRect();
 ```
+##### propTypes 
+help document your components, which benefits future development in two ways.
+1. You can easily open up a component and check which props are required and what type they should be.
+2. When things get messed up, React will give you an error message in the console, saying which props are wrong/missing and the render method that caused the problem.

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes} from "react";
 class CheckList extends Component {
   render() {
     let tasks = this.props.tasks.map((task) => (
