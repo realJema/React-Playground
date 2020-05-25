@@ -1,11 +1,11 @@
-import React, { Component, PropTypes} from "react";
+import React, { Component} from "react";
 class CheckList extends Component {
   render() {
     let tasks = this.props.tasks.map((task) => (
       <li key={task.id} className="checklist__task">
         <input type="checkbox" defaultChecked={task.done} />
         {task.name}
-        <a href="wwww.google.com" className="checklist__task--remove" />
+        <a href="wwww.google.com" className="checklist__task--remove">.</a>
       </li>
     ));
     return (

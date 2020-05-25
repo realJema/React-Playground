@@ -6,11 +6,8 @@ import Products from './components/layout/products/products';
 import Filters from './components/layout/filters/filters';
 import Footer from './components/layout/footer/footer';
 
-
-// importing bootstrap and css
+// importing css
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
-
 
 function Obili() {
   // this is necessary for adding nested routes 

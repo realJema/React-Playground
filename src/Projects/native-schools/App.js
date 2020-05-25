@@ -12,8 +12,6 @@ import SubmenuBooks from './Components/submenu_books';
 import SubmenuVideos from './Components/submenu_videos';
 import Dashboard from "./Components/dashboard";
 
-// importing bootstrap
-import 'bootstrap/dist/css/bootstrap.css';
 // importing font-awesome icons 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';

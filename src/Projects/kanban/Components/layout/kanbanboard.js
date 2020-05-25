@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import List from "./list";
 
 class KanbanBoard extends Component {

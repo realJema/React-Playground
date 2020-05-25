@@ -1,9 +1,6 @@
 import React from "react";
 import './App.css';
 
-// importing bootstrap
-import 'bootstrap/dist/css/bootstrap.css';
-// {/* Hompage which contains the link to all the projects I am working on */}
 class WriterApp extends React.Component {
     constructor(props) {
        super(props);

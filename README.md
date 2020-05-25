@@ -3,7 +3,7 @@
 This is @realJema *playground* with react to learn how it works and t work on some interesting projects. 
 
 
-### Learning React 
+## Learning React 
 #### Book: Pro React 
 > *Build Complex front-end Applications in a composable way with React*
 
@@ -108,3 +108,11 @@ let inputRect = input.getBoundingClientRect();
 help document your components, which benefits future development in two ways.
 1. You can easily open up a component and check which props are required and what type they should be.
 2. When things get messed up, React will give you an error message in the console, saying which props are wrong/missing and the render method that caused the problem.
+
+
+## Projects 
+Description of projects found in this playground 
+
+
+### Finder 
+A search engine showing different informations people bay be searching for. 

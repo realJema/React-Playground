@@ -33,6 +33,9 @@ export default function Home() {
             <li>
               <Link className="btn  btn-outline-dark" to="/kanban">Kanban</Link>
             </li>
+            <li>
+              <Link className="btn  btn-outline-dark" to="/finder">Finder</Link>
+            </li>
           </ul>
           <footer>
             <Link className="footer" to="/sponsors"><p>Sponsored by</p></Link>

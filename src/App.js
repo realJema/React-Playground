@@ -8,10 +8,14 @@ import MoviesApp from './Projects/moviesApp/App';
 import Counter from './Projects/counter/App';
 import Ads from './Projects/ads/App';
 import Kanban from './Projects/kanban/App';
+import Finder from './Projects/finder/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
 import Sponsors from './sponsors';
 import Home from './Home';
+
+// importing bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function App() {
   return (
@@ -36,6 +40,9 @@ export default function App() {
           </Route>
           <Route path="/kanban">
             <Kanban />
+          </Route>
+          <Route path="/finder">
+            <Finder />
           </Route>
           <Route path="/sponsors">
             <Sponsors />
