@@ -4,26 +4,26 @@ import React from "react";
 class Post extends React.Component {
   render() {
     return (
-        <div class="col-md-3 column">
-          <div class="post-module">
-            <div class="thumbnail">
-              <div class="date">
-                <div class="day"> {this.props.data.date["day"]} </div>
-                <div class="month">Mar</div>
+        <div key={this.props.data._id} className="col-md-3 column">
+          <div className="post-module">
+            <div className="thumbnail">
+              <div className="date">
+                <div className="day"> {this.props.data.date["day"]} </div>
+                <div className="month">Mar</div>
               </div>
               <img src={require('../images/' + this.props.data.img)} alt="photos"/>
             </div>
-            <div class="post-content">
-              <div class="category">{this.props.data.category}</div>
-              <h1 class="title">{this.props.data.title} </h1>
-              <h2 class="sub_title">{this.props.data.sub_title}</h2>
-              <p class="description"> {this.props.data.description}</p>
-              <div class="post-meta">
-                <span class="timestamp">
-                  <i class="fa fa-clock-">o</i>6 mins ago
+            <div className="post-content">
+              <div className="category">{this.props.data.category}</div>
+              <h1 className="title">{this.props.data.title} </h1>
+              <h2 className="sub_title">{this.props.data.sub_title}</h2>
+              <p className="description"> {this.props.data.description}</p>
+              <div className="post-meta">
+                <span className="timestamp">
+                  <i className="fa fa-clock-">o</i>6 mins ago
                 </span>
-                <span class="comments">
-                  <i class="fa fa-comments"></i>
+                <span className="comments">
+                  <i className="fa fa-comments"></i>
                   <a href="www.native237.com">39 comments</a>
                 </span>
               </div>

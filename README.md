@@ -116,3 +116,16 @@ Description of projects found in this playground
 
 ### Finder 
 A search engine showing different informations people bay be searching for. 
+
+##### Installation 
+Ensure that the mongodb is running 
+create database with sample data using `/src/Api/finderApp_db_creation.py`. 
+run the script 
+`python finderApp_db_creation.py`
+
+## Api
+The api is built using python Flask and a mongodb database. 
+**Database**: Mongodb 
+**Framework**: Flask 
+**Backend**: Python3
+

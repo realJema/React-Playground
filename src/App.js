@@ -11,11 +11,12 @@ import Kanban from './Projects/kanban/App';
 import Finder from './Projects/finder/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
-import Sponsors from './sponsors';
-import Home from './Home';
+import Sponsors from './Projects/sponsors';
+import Home from './Projects/Home';
 
 // importing bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 
 export default function App() {
   return (

@@ -144,6 +144,8 @@
   color: #333333;
   font-size: 18px;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .post-module .post-content .sub_title {
   margin: 0;
