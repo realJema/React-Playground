@@ -1,41 +1,64 @@
-import React from "react";
+import React, { useReducer, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Post from "./Components/layout/post";
+import {reducer, initialState} from "./Components/reducers/index";
 
-class Finder extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fetch: [],
-      works: false,
-    };
-  }
+const BACKEND_API = "http://127.0.0.1:5000//playground/api/finder/";
+
+const Finder = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   // get data before component mounts
-  componentDidMount() {
-    var url = "http://127.0.0.1:5000//playground/api/finder/data";
-    axios.get(url).then((res) => {
-      this.setState({
-        fetch: res.data,
-        works: true,
+  useEffect(() => {
+    axios.get(BACKEND_API + 'data')
+    .then((res) => {
+      dispatch({
+        type: "LOAD_POSTS",
+        payload: res.data
       });
-      // console.log(res.data);
+    })
+    .catch((error) => {
+      // Error
+      dispatch({
+        type: "LOAD_FAILURE",
+        error: error.message
+      });
     });
-  }
+  }, []);
 
-  // conditional rendering in case the db is inaccessible 
-  renderPosts() {
-    if (this.state.works) {
-      return this.state.fetch.map((card, index) => (
-        <Post data={card} key={index}/>
-      ));
-    } else {
-      return <h1>Unable to connect to database</h1>;
+  // search for a specific post 
+  const search = (value) => {
+    dispatch({
+      type: "LOADING"
+    });
+    axios.post(BACKEND_API + 'search',{
+      params: {
+        values: value,
+      }
+    })
+      .then((res) => {
+        dispatch({
+            type: "LOAD_POSTS",
+            payload: res.data
+        });
+      })
+      .catch((error) => {
+        // Error
+        dispatch({
+          type: "LOAD_FAILURE",
+          error: error.message
+        });
+      });
+  };
+  const _handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+        //   console.log('enter button pressed');
+        search(e.target.value)
     }
   }
 
-  render() {
+  const { posts, errorMessage, loading } = state;
     return (
       <div className="main_finder">
         <div className="col-md-12 container">
@@ -46,6 +69,7 @@ class Finder extends React.Component {
                 type="text"
                 name=""
                 placeholder="Search..."
+                onKeyDown={_handleKeyDown}
               />
               <a href="www.native237.com" className="search_icon">
                 <i className="fas fa-search"></i>
@@ -56,12 +80,20 @@ class Finder extends React.Component {
           <br />
           <div className="col-md-12 row justify-content-center">
             <div id="main_container" className="col-md-12 row">
-              {this.renderPosts()}
+              {/* conditional in case db is inaccesible */}
+            {loading && !errorMessage ? (
+              <span>loading... </span>
+            ) : errorMessage ? (
+              <span>Couldn't get data: {errorMessage}</span>
+            ) : (
+              posts.map((post, index) => (
+                <Post data={post} key={index}/>
+              ))
+            )}
             </div>
           </div>
         </div>
       </div>
     );
-  }
 }
 export default Finder;

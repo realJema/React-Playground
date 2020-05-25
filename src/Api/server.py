@@ -21,6 +21,17 @@ def getFinderData():
 
     return dumps(data) 
 
+def searchFinderData(values):
+    '''
+    Get data from mongodb database 
+    '''
+    import re
+    regx = re.compile(values, re.IGNORECASE)
+    myquery = {"title" : { "$regex": regx}}
+    data = mongo.db.posts.find(myquery)
+
+    return dumps(data) # dumps converts data to json
+
 
 @app.route('/playground/api', methods=['GET'])
 def home():
@@ -40,6 +51,19 @@ def finder_data():
     now = datetime.now()
     print('[Data Fetch] : ', now.strftime("[%d/%m/%Y %H:%M:%S]"))
     return getFinderData(), 200
+
+@app.route('/playground/api/finder/search', methods=['POST'])
+def search_data():
+    '''
+    Finder app data. Returns the data for the finder app
+    '''
+    # print date and time of fetch 
+    from datetime import datetime
+    now = datetime.now()
+    print('[Data Search] : ', now.strftime("[%d/%m/%Y %H:%M:%S]"))
+    search_values = request.json['params']['values']
+
+    return searchFinderData(search_values), 200
 
 @app.errorhandler(404)
 def page_not_found(e):
