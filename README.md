@@ -2,6 +2,19 @@
 
 This is @realJema *playground* with react to learn how it works and t work on some interesting projects. 
 
+## Learning REST API
+The API components are:  
+1. API endpoint
+It is a unique URL that contains the objects or collection of objects:
+2. Headers
+Headers are used to give server instructions about the variables in the request. It is used for web communication. These are those fields of the packet that describe to the server the kinds of web pages that are being requested by the client, and consequently enable the client to access these pages.
+3. Method
+HTTP methods (or verbs) are a list of functions that perform corresponding operations that usually involve creation/reading/updating/deleting (CRUD) a resource.
+Since we want to GET all the list of messages in the users account therefore the method used will be “get”.
+4. Data
+Data is generally given when we are creating, updating, or deleting something. In general, data is required when method is POST, PUT or DELETE. Here we are using a GET request therefore data is not required.
+5. Params
+These are user specifications passed to the endpoint that affects the type of response generated. The different types include header parameters, path parameters, query string parameters and request body parameters. If we only want the top 10 messages as response and not the whole list of 100–1000 messages then we will set the params as:
 
 ## Learning React 
 #### Book: Pro React 
