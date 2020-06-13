@@ -62,3 +62,7 @@ if "posts" in collist:
 else:
     print('Unable to create database. Ensure mongodb is running ')
 
+for x in mycol.find().skip(1).limit(3):
+  print(x)
+
+print(mycol.find().count(True)) # counts the number of elements in db 

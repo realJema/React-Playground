@@ -2,6 +2,27 @@
 
 This is @realJema *playground* with react to learn how it works and t work on some interesting projects. 
 
+
+## Projects 
+Description of projects found in this playground 
+
+
+### Finder 
+A search engine showing different informations people bay be searching for. 
+
+##### Installation 
+Ensure that the mongodb is running 
+create database with sample data using `/src/Api/finderApp_db_creation.py`. 
+run the script 
+`python finderApp_db_creation.py`
+
+## Api
+The api is built using python Flask and a mongodb database. 
+**Database**: Mongodb 
+**Framework**: Flask 
+**Backend**: Python3
+
+
 ## Learning REST API
 The API components are:  
 1. API endpoint
@@ -123,22 +144,7 @@ help document your components, which benefits future development in two ways.
 2. When things get messed up, React will give you an error message in the console, saying which props are wrong/missing and the render method that caused the problem.
 
 
-## Projects 
-Description of projects found in this playground 
+#### Book: Pro MERN Stack
+> *Full Stack Web App Development with Mongo, Express, React, and Node*
 
-
-### Finder 
-A search engine showing different informations people bay be searching for. 
-
-##### Installation 
-Ensure that the mongodb is running 
-create database with sample data using `/src/Api/finderApp_db_creation.py`. 
-run the script 
-`python finderApp_db_creation.py`
-
-## Api
-The api is built using python Flask and a mongodb database. 
-**Database**: Mongodb 
-**Framework**: Flask 
-**Backend**: Python3
-
+**Stack**: Combination of technologies that make up a web application 

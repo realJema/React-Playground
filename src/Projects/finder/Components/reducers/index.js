@@ -1,7 +1,10 @@
 export const initialState = {
     loading: true,
     posts: [],
-    errorMessage: null
+    post: 111,
+    errorMessage: null,
+    limit: 10,
+    last_value: 0
   };
   
   export const reducer = (state, action) => {
@@ -16,7 +19,13 @@ export const initialState = {
         return {
           ...state,
           loading: false,
-          posts: action.payload
+          posts: state.posts.concat(action.payload),
+          last_value: action.last_value
+        };
+      case "POST_DETAIL":
+        return {
+          ...state,
+          post: action.postId
         };
       case "LOAD_FAILURE":
         return {

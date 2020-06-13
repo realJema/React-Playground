@@ -6,7 +6,9 @@
   background-color: gainsboro;
   padding: 0;
 }
-
+.place_card{
+  transition: 2s ease-in-out;
+}
 .searchbar {
     margin-top: 5%;
     height: 60px;
@@ -58,6 +60,7 @@
   -ms-transition: all 0.3s linear 0s;
   -o-transition: all 0.3s linear 0s;
   transition: all 0.3s linear 0s;
+  margin: 1.7% 1.5%;
 }
 .post-module:hover,
 .hover {
@@ -189,10 +192,6 @@
 }
 .justify-content-center {
   margin: 0;
-}
-.col-md-3 {
-  max-width: 19%;
-  margin: 0.7% 0.5%;
 }
 .container .column {
       -moz-box-sizing: border-box;

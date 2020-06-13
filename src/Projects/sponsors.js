@@ -1,7 +1,7 @@
 import React from "react";
 
 import 'bootstrap/dist/css/bootstrap.css';
-// {/* Hompage which contains the link to all the projects I am working on */}
+
 export default function Sponsors() {
     return (
         <div className="main_container">

@@ -12,12 +12,6 @@ export default function Home() {
           <h1 className="brand" >NATIVE</h1><br/>
           <ul className="row">
             <li>
-              <Link className="btn  btn-outline-dark" to="/">Home</Link>
-            </li>
-            <li>
-              <Link className="btn  btn-outline-dark" to="/moviesapp">Movies App</Link>
-            </li>
-            <li>
               <Link className="btn  btn-outline-dark" to="/nativeschools">Schools</Link>
             </li>
             <li>

@@ -4,7 +4,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import MoviesApp from './Projects/moviesApp/App';
 import Counter from './Projects/counter/App';
 import Ads from './Projects/ads/App';
 import Kanban from './Projects/kanban/App';
@@ -17,6 +16,7 @@ import Home from './Projects/Home';
 // importing bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import Details from "./Projects/finder/Components/layout/details";
 
 export default function App() {
   return (
@@ -24,11 +24,11 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/finder/details">
+            <Details />
+          </Route>
           <Route path="/nativeschools">
             <NativeSchools />
-          </Route>
-          <Route path="/moviesapp">
-            <MoviesApp />
           </Route>
           <Route path="/writerapp">
             <WriterApp />

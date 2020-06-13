@@ -21,7 +21,7 @@ class Card extends Component {
     if (this.state.showDetails) {
       cardDetails = (
         <div className="card__details">
-          <span
+          <span  contentEditable="true"
             dangerouslySetInnerHTML={{ __html: marked(this.props.description) }}
           />
           <CheckList cardId={this.props.id} tasks={this.props.tasks} />
