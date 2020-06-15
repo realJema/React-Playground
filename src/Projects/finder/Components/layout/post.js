@@ -1,6 +1,4 @@
 import React from "react";
-import {reducer, initialState} from "../reducers/index";
-
 
 class Post extends React.Component {
   goToDetails = (e) => {

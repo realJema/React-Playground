@@ -13,7 +13,7 @@ const Finder = () => {
 
   // get data before component mounts
   useEffect(() => {
-   loadMore();
+  //  loadMore();
   }, []);
 
   // search for a specific post 
