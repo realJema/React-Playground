@@ -1,13 +1,36 @@
-import { FETCH_POSTS, NEW_POST } from '../actions/types';
+import { FETCH_POSTS, NEW_POST, INCREMENT, DECREMENT, AUTH } from '../actions/types';
 
 const initialState = {
     items: [],
-    item: {}
+    item: {},
+    count: 0,
+    auth: false
 }
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case FETCH_POSTS:
+        case FETCH_POSTS: 
+            return {
+                ...state, 
+                items: action.payload
+            }
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + action.payload
+            }
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count - action.payload
+            }
+        case AUTH:
+            return {
+                ...state,
+                auth: !state.auth
+            }
+       default:
+           return state
             
     }
 }
