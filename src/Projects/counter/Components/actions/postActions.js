@@ -24,9 +24,8 @@ export const decrementing = () => dispatch => {
     })
 }
 
-export const auth = (status) => dispatch => {
+export const auth = () => dispatch => {
     dispatch({
         type: AUTH,
-        payload: status
     })
 }

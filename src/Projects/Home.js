@@ -7,6 +7,10 @@ import {
 import 'bootstrap/dist/css/bootstrap.css';
 // {/* Hompage which contains the link to all the projects I am working on */}
 export default function Home() {
+  let footerLinks = {
+    padding: "0 14px",
+    margin: 0,
+  }
     return (
         <div className="main_container">
           <img className="brand" src={require('./logo.svg')} alt="native-logo" />
@@ -30,8 +34,17 @@ export default function Home() {
               <Link className="btn  btn-outline-dark" to="/finder">Finder</Link>
             </li>
           </ul>
-          <footer>
-            <Link className="footer" to="/sponsors"><p>Sponsored by</p></Link>
+        <footer>
+          <ul className="row">
+            <li style={footerLinks}>
+            <Link className="footer" to="/sponsors" 
+            ><p>Sponsored by </p></Link>
+            </li>
+            <li style={footerLinks}>
+            <Link className="footer" to="/comingsoon" 
+            > <p>Vision & Missions</p></Link>
+            </li>
+          </ul>
           </footer>
         </div>
   );
