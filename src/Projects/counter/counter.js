@@ -18,18 +18,12 @@ class Counter1 extends React.Component {
     this.props.decrementing();
   };
 
-  auth = () => {
-    this.props.auth();
+  auth = (e) => {
+    console.log(e);
+    this.props.auth(e);
   }
 
   render() {
-    const status = () => {
-      if(this.props.auth){
-        return <h1>logged in </h1>;
-      }else{
-      return <h1>logged out</h1>;
-        } 
-    }
     return (
       <div className="container-fluid">
         <div className="jumbotron jumbotron-fluid">
@@ -40,13 +34,21 @@ class Counter1 extends React.Component {
         </div>
         <h2>Counter - {this.props.count}</h2>
         <div className="row">
-          <div className="btn btn-primary" onClick={this.increment.bind(this)}>+</div>
-          <div className="btn btn-danger" onClick={this.decrement.bind(this)}>-</div>
+          <div className="btn btn-primary" onClick={this.increment.bind(this)}>
+            +
+          </div>
+          <div className="btn btn-danger" onClick={this.decrement.bind(this)}>
+            -
+          </div>
         </div>
         <div className="row">
-          <div className="btn btn-success" onClick={this.auth.bind(this)}>Login</div>
-          <div className="btn btn-warning" onClick={this.auth.bind(this)}>Logout</div>
-          {status()}
+          <div className="btn btn-success" onClick={this.auth.bind("Login")}>
+            Login
+          </div>
+          <div className="btn btn-warning" onClick={this.auth.bind("Logout")}>
+            Logout
+          </div>
+          {this.props.auth}
         </div>
         <div className="row"></div>
       </div>

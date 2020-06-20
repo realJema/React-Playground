@@ -4,7 +4,7 @@ const initialState = {
     items: [],
     item: {},
     count: 0,
-    auth: false
+    auth: "false"
 }
 
 export default function (state = initialState, action) {
@@ -27,7 +27,7 @@ export default function (state = initialState, action) {
         case AUTH:
             return {
                 ...state,
-                auth: !state.auth
+                auth: action.payload
             }
        default:
            return state
