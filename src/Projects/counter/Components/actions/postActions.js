@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POSTS, INCREMENT, DECREMENT, AUTH } from './types';
+import { FETCH_POSTS, INCREMENT, DECREMENT, AUTH } from './types';
 
 export const fetchPosts = () => dispatch => {
     console.log('fetching')
@@ -10,10 +10,10 @@ export const fetchPosts = () => dispatch => {
     }))
 }
 
-export const incrementing = (val) => dispatch => {
+export const incrementing = () => dispatch => {
     dispatch({
         type: INCREMENT,
-        payload: val
+        payload: 1
     })
 }
 

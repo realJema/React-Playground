@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts, incrementing, decrementing, auth } from './Components/actions/postActions';
 
@@ -10,7 +10,7 @@ class Counter1 extends React.Component {
   
   increment = () => {
     console.log("incrementing")
-    this.props.incrementing(5);
+    this.props.incrementing();
   };
   
   decrement = () => {
@@ -20,22 +20,15 @@ class Counter1 extends React.Component {
 
   auth = (e) => {
     let auth_status = e.target.textContent
-    if (auth_status == 'Login') {
-      this.props.auth("true");
+    if (auth_status === 'Login') {
+      this.props.auth(true);
     } else {
-      this.props.auth("false")
+      this.props.auth(false)
     }
     // this.props.auth();
   }
 
   render() {
-    const status = () => {
-      if(this.props.auth){
-        return <h1>logged in </h1>;
-      }else{
-      return <h1>logged out</h1>;
-        } 
-    }
     return (
       <div className="container-fluid">
         <div className="jumbotron jumbotron-fluid">
@@ -44,7 +37,6 @@ class Counter1 extends React.Component {
             <p className="lead">Count the time up or down</p>
           </div>
         </div>
-        <h2>Counter - {this.props.count}</h2>
         <div className="row">
           <div className="btn btn-primary" onClick={this.increment.bind(this)}>
             +
@@ -52,6 +44,7 @@ class Counter1 extends React.Component {
           <div className="btn btn-danger" onClick={this.decrement.bind(this)}>
             -
           </div>
+        <h2>Counter - {this.props.posts.count}</h2>
         </div>
         <div className="row">
           <div
@@ -68,8 +61,8 @@ class Counter1 extends React.Component {
           >
             Logout
           </div>
+        <h2>state - {this.props.posts.auth? "Logged In" : "Logged out"}</h2>
         </div>
-        <h2>Counter - {this.props.auth}</h2>
         <div className="row"></div>
       </div>
     );
@@ -81,9 +74,7 @@ class Counter1 extends React.Component {
 // }
 
 const mapStateToProps = state => ({
-  posts: state.posts.items,
-  count: state.posts.count,
-  auth: state.posts.auth
+  posts: state.posts
 })
 
 export default connect(mapStateToProps, {

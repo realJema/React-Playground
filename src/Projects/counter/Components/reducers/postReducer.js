@@ -1,10 +1,10 @@
-import { FETCH_POSTS, NEW_POST, INCREMENT, DECREMENT, AUTH } from '../actions/types';
+import { FETCH_POSTS, INCREMENT, DECREMENT, AUTH } from '../actions/types';
 
 const initialState = {
     items: [],
     item: {},
     count: 0,
-    auth: false
+    auth: String
 }
 
 export default function (state = initialState, action) {

@@ -13,7 +13,7 @@ export default function Home() {
   }
     return (
         <div className="main_container">
-          <img className="brand" src={require('./logo.svg')} alt="native-logo" />
+          <img className="logo" src={require('./logo.svg')} alt="native-logo" />
           <ul className="row">
             <li>
               <Link className="btn  btn-outline-dark" to="/nativeschools">Schools</Link>
@@ -41,8 +41,8 @@ export default function Home() {
             ><p>Sponsored by </p></Link>
             </li>
             <li style={footerLinks}>
-            <Link className="footer" to="/comingsoon" 
-            > <p>Vision & Missions</p></Link>
+            <Link className="footer" to="/missions" 
+            > <p>Missions & Vision</p></Link>
             </li>
           </ul>
           </footer>
