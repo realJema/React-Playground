@@ -1,4 +1,5 @@
 /*
+ * Title: NATIVE API Script
  * author: @realjema
  * date: 11/07/2020
  * description: NATIVE api script containing the informations fetching routes for all the projects on the main website [naite237.com]
@@ -11,6 +12,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 // data schemas
+const Finder = require("./models/finder_post");
 
 // Import the library:
 var cors = require('cors');
@@ -46,15 +48,39 @@ app.use(express.static(path.join(__dirname, 'public')));
  * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /*
-  Route: /api
+  Route: /native/api
   Type: GET
   Description: Default route displaying information about api
 */
-app.get('/api', function (req, res) {
+app.get('/native/api', function (req, res) {
   res.status(200).send("Welcome to the NATIVE api!");
 });
 
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * project: Finder
+ * route: /finder
+ * description: these are the routes for the finder project
+ * * * * * * * * * * * * * * * * * * * * * * * * */
+/*
+  Route: /native/api/finder/data
+  Type: GET
+  Description: get the data for the finder project
+*/
+app.get('/native/api/finder/data', function (req, res) {
+  Finder.find(function (err, posts) {
+    if (err) {
+      res.status(401).send("Internal Server Error");
+    } else {
+      // sending all the posts fetch from the database
+      console.log('got here')
+      res.status(200).send(posts);
+    }
+  });
+});
 
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+*  end: Finder Routes
+* * * * * * * * * * * * * * * * * * * * * * * * */
 // listening on this port
 const PORT = process.env.PORT || 5000;
 

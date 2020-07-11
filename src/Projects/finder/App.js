@@ -4,7 +4,7 @@ import "./App.css";
 import Post from "./Components/layout/post";
 import {reducer, initialState} from "./Components/reducers/index";
 
-const BACKEND_API = "http://127.0.0.1:5000//playground/api/finder/";
+const BACKEND_API = "http://localhost:5000/native/api/finder/";
 
 const Finder = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -42,7 +42,7 @@ const Finder = () => {
   };
   // load more
   const loadMore = () => {
-    axios.post(BACKEND_API + 'data',{
+    axios.get(BACKEND_API + 'data',{
       params: {
         limit: limit,
         last_value: last_value
