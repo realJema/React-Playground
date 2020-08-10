@@ -18,6 +18,8 @@ import Card14 from "./Card14";
 import Card15 from "./Card15";
 import Card16 from "./Card16";
 
+import './styles.css';
+
 const Container = styled.div`
   padding: 50px;
   padding-bottom: 100px;

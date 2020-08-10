@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
+  // grid-column: span 4 !important;
   position: relative;
   background: url(${props => props.bgPhoto}), ${props => props.bgColor};
   background-position: center top;
