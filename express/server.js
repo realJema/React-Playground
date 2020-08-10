@@ -72,7 +72,6 @@ app.get('/native/api/finder/data', function (req, res) {
       res.status(401).send("Internal Server Error");
     } else {
       // sending all the posts fetch from the database
-      console.log('got here')
       res.status(200).send(posts);
     }
   });
