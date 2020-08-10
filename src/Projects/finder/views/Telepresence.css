@@ -1,0 +1,17 @@
+.navbg{
+    
+    background-image: url(../assets/img/telepresence/salle-1.jpg);
+    background-size: cover;
+}
+
+.rounded-circle-town {
+    
+    height: 190px;
+    object-fit: cover;
+}
+.no-padding  {
+    padding: 0 !important;
+}
+.section-profile-cover {
+    height: 450px;
+}

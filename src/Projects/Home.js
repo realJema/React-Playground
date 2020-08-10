@@ -33,6 +33,9 @@ export default function Home() {
             <li>
               <Link className="btn  btn-outline-dark" to="/finder">Finder</Link>
             </li>
+            <li>
+              <Link className="btn  btn-outline-dark" to="/applist">Apps 237</Link>
+            </li>
           </ul>
         <footer>
           <ul className="row">

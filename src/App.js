@@ -10,6 +10,7 @@ import Kanban from './Projects/kanban/App';
 import Finder from './Projects/finder/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
+import AppList from './Projects/AppList/App';
 import Sponsors from './Projects/sponsors';
 import ComingSoon from './Projects/comingSoon';
 import Home from './Projects/Home';
@@ -26,6 +27,9 @@ export default function App() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
+        <Route path="/applist">
+          <AppList />
+        </Route>
         <Route path="/finder/details">
           <Details />
         </Route>
