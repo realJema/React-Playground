@@ -13,7 +13,8 @@ const mongoose = require('mongoose');
 
 // data schemas
 const Finder = require("./models/finder_post");
-
+const Shoutout = require("./models/shoutout_post");
+console.log(module);
 // Import the library:
 var cors = require('cors');
 
@@ -26,6 +27,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+
+// function to get the time for every fetch 
+function getCurrentTime() {
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date + ' ' + time;
+  return dateTime;
+};
+  
 // local database
 const mongo_uri = 'mongodb://localhost/nativedb';
 
@@ -72,6 +83,7 @@ app.get('/native/api/finder/data', function (req, res) {
       res.status(401).send("Internal Server Error");
     } else {
       // sending all the posts fetch from the database
+      console.log("[" + getCurrentTime() + "] - Finder All Data fetched");
       res.status(200).send(posts);
     }
   });
@@ -79,6 +91,32 @@ app.get('/native/api/finder/data', function (req, res) {
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
 *  end: Finder Routes
+* * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * project: Shoutout
+ * route: /shoutout
+ * description: these are the routes for the shoutout project
+ * * * * * * * * * * * * * * * * * * * * * * * * */
+/*
+  Route: /native/api/shoutout/data
+  Type: GET
+  Description: get all posts from shoutout
+*/
+app.get('/native/api/shoutout/data', function (req, res) {
+  Shoutout.find(function (err, posts) {
+    if (err) {
+      res.status(401).send("Internal Server Error");
+    } else {
+      // sending all the posts fetch from the database
+      console.log("[" + getCurrentTime() + "] - Shoutout All Data fetched");
+      console.log(posts);
+      res.status(200).send(posts);
+    }
+  });
+});
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+*  end: Shoutout Routes
 * * * * * * * * * * * * * * * * * * * * * * * * */
 // listening on this port
 const PORT = process.env.PORT || 5000;

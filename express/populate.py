@@ -9,7 +9,7 @@ import pymongo
 # myclient = pymongo.MongoClient("mongodb://127.0.0.1:27017/") # connect to local mongodb(yours might be different)
 myclient = pymongo.MongoClient("mongodb+srv://admin:neverSETTLE4anything!@nativenews.esbmn.mongodb.net/nativenews?retryWrites=true&w=majority") # connect to my cloud mongodb (password displayed!!!!)
 
-mydb = myclient["nativenews"] # checks/creates database (upated <nativenews> with your db name)
+mydb = myclient["nativedb"] # checks/creates database (upated <nativenews> with your db name)
 mycol = mydb["posts"] # checks/creates collection in mydb (updated <posts> with your collection name)
 
 # values to be inserted in the collection are stored as json 
