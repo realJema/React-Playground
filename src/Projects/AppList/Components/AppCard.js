@@ -41,6 +41,11 @@ const Title = styled.span`
 const Subtitle = styled.span`
   font-size: 14px;
   color: ${(props) => props.color};
+  display: block;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const TagContainer = styled.div`

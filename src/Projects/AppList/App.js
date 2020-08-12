@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import styled from "styled-components";
 
 // import "./styles.css";
@@ -37,20 +38,56 @@ const Container = styled.div`
   }
 `;
 
+const BACKEND_API = "http://localhost:5000/native/api/shoutout/";
 
 class AppList extends React.Component {
+  state = {
+    shoutout_post: [],
+    laoding: true, 
+    error: false,
+    errorMessage: "",
+  }
+
+  componentDidMount() {
+    axios
+      .get(BACKEND_API + "data")
+      .then((res) => {
+        this.setState({
+          shoutout_post: res.data,
+          loading: false
+        });
+      })
+      .catch((error) => {
+        // Error
+        console.log(error);
+        this.setState({
+          errorMessage: error.message,
+          error: true,
+          loading: false
+        });
+      });
+  } 
     render() {
       return (
         <Container>
-          <AppCard
-            title="Toledo, Spain"
-            subtitle="Also know as The Imperial City."
-            tag="Spain"
-            centerIconName="fas fa-play-circle"
-            bottomIconName="fas fa-ellipsis-h"
-            bgPhoto="https://picsum.photos/740/420/?random"
-            cardSize="4"
-          />
+          {this.state.loading && !this.state.error ? (
+            <span>loading... </span>
+          ) : this.state.error? (
+            <span>Couldn't get data: {this.state.errorMessage}</span>
+          ) : (
+            this.state.shoutout_post.map((post, index) => (
+              <AppCard
+                key={index}
+                title="Toledo, Spain"
+                subtitle="Also know as The Imperial City."
+                tag="Spain"
+                centerIconName="fas fa-play-circle"
+                bottomIconName="fas fa-ellipsis-h"
+                bgPhoto="https://picsum.photos/740/420/?random"
+                cardSize="4"
+              />
+            ))
+          )}
         </Container>
       );
   }
