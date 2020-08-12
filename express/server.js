@@ -12,9 +12,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 // data schemas
-const Finder = require("./models/finder_post");
-const Shoutout = require("./models/shoutout_post");
-console.log(module);
+var mods = require("./models");
+
 // Import the library:
 var cors = require('cors');
 
@@ -103,7 +102,7 @@ app.get('/native/api/finder/data', function (req, res) {
   Description: get all posts from shoutout
 */
 app.get('/native/api/shoutout/data', function (req, res) {
-  Shoutout.find(function (err, posts) {
+  mods.Shoutout.find(function (err, posts) {
     if (err) {
       res.status(401).send("Internal Server Error");
     } else {

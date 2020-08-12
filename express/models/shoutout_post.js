@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // this will be our data base's data structure
-const shoutout = new Schema(
+const Shoutout = new Schema(
   {
+    id: Number,
     title: String,
     img: String,
     sub_title: String,
@@ -23,4 +24,5 @@ const shoutout = new Schema(
 );
 
 // export the new Schema so we could modify it using Node.js
-module.exports = mongoose.model("shoutout", shoutout);
+// Caution: schema and model shouldn't have thesame name
+module.exports = mongoose.model("shoutouts", Shoutout);
