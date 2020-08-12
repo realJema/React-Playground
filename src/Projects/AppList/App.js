@@ -1,12 +1,11 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-
+import "./App.css";
 // import "./styles.css";
 import AppCard from './Components/AppCard';
 
-// create a masonry grid with cards 
-
+// this creates a masonry grid with cards 
 const Container = styled.div`
   padding: 50px;
   padding-bottom: 100px;
@@ -38,6 +37,7 @@ const Container = styled.div`
   }
 `;
 
+// local db link 
 const BACKEND_API = "http://localhost:5000/native/api/shoutout/";
 
 class AppList extends React.Component {
@@ -69,26 +69,32 @@ class AppList extends React.Component {
   } 
     render() {
       return (
-        <Container>
-          {this.state.loading && !this.state.error ? (
-            <span>loading... </span>
-          ) : this.state.error? (
-            <span>Couldn't get data: {this.state.errorMessage}</span>
-          ) : (
-            this.state.shoutout_post.map((post, index) => (
-              <AppCard
-                key={index}
-                title="Toledo, Spain"
-                subtitle="Also know as The Imperial City."
-                tag="Spain"
-                centerIconName="fas fa-play-circle"
-                bottomIconName="fas fa-ellipsis-h"
-                bgPhoto="https://picsum.photos/740/420/?random"
-                cardSize="4"
-              />
-            ))
-          )}
-        </Container>
+        <div>
+          <div className="header">
+            <h1 className="header-title">SHOUT-OUT</h1>
+            <p className="header-subtitle">Advertisement </p>
+          </div>
+          <Container>
+            {this.state.loading && !this.state.error ? (
+              <span>loading... </span>
+            ) : this.state.error ? (
+              <span>Couldn't get data: {this.state.errorMessage}</span>
+            ) : (
+              this.state.shoutout_post.map((post, index) => (
+                <AppCard
+                  key={index}
+                  title={post.title}
+                  subtitle={post.sub_title}
+                  tag={post.category}
+                  centerIconName="fas fa-play-circle"
+                  bottomIconName="fas fa-ellipsis-h"
+                  bgPhoto={post.img}
+                  cardSize={post.size}
+                />
+              ))
+            )}
+          </Container>
+        </div>
       );
   }
 }
