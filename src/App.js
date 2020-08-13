@@ -5,7 +5,6 @@ import {
   Route,
 } from "react-router-dom";
 import Counter from './Projects/counter/App';
-import Ads from './Projects/ads/App';
 import Kanban from './Projects/kanban/App';
 import Finder from './Projects/finder/App';
 import WriterApp from './Projects/writerApp/App';
@@ -49,9 +48,6 @@ export default function App() {
         </Route>
         <Route path="/counter">
           <Counter />
-        </Route>
-        <Route path="/ads">
-          <Ads />
         </Route>
         <Route path="/kanban">
           <Kanban />
