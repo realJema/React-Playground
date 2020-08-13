@@ -11,6 +11,7 @@ import Finder from './Projects/finder/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
 import AppList from './Projects/AppList/App';
+import AppListDetails from './Projects/AppList/Components/Details';
 import AppList2 from './Projects/AppList/Components/examples/App';
 import Sponsors from './Projects/sponsors';
 import ComingSoon from './Projects/comingSoon';
@@ -30,6 +31,9 @@ export default function App() {
       <Switch>
         <Route path="/applist/template">
           <AppList2 />
+        </Route>
+        <Route path="/applist/details">
+          <AppListDetails />
         </Route>
         <Route path="/applist">
           <AppList />

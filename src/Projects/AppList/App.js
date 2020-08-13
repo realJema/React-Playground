@@ -3,9 +3,10 @@ import axios from "axios";
 import styled from "styled-components";
 import "./App.css";
 // import "./styles.css";
-import AppCard from './Components/AppCard';
+import AppCard from "./Components/AppCard";
+import { withRouter } from "react-router";
 
-// this creates a masonry grid with cards 
+// this creates a masonry grid with cards
 const Container = styled.div`
   padding: 50px;
   padding-bottom: 100px;
@@ -37,16 +38,16 @@ const Container = styled.div`
   }
 `;
 
-// local db link 
+// local db link
 const BACKEND_API = "http://localhost:5000/native/api/shoutout/";
 
 class AppList extends React.Component {
   state = {
     shoutout_post: [],
-    laoding: true, 
+    laoding: true,
     error: false,
     errorMessage: "",
-  }
+  };
 
   componentDidMount() {
     axios
@@ -54,7 +55,7 @@ class AppList extends React.Component {
       .then((res) => {
         this.setState({
           shoutout_post: res.data,
-          loading: false
+          loading: false,
         });
       })
       .catch((error) => {
@@ -63,26 +64,38 @@ class AppList extends React.Component {
         this.setState({
           errorMessage: error.message,
           error: true,
-          loading: false
+          loading: false,
         });
       });
-  } 
-    render() {
-      return (
-        <div>
-          <div className="header">
-            <h1 className="header-title">SHOUT-OUT</h1>
-            <p className="header-subtitle">Advertisement </p>
-          </div>
-          <Container>
-            {this.state.loading && !this.state.error ? (
-              <span>loading... </span>
-            ) : this.state.error ? (
-              <span>Couldn't get data: {this.state.errorMessage}</span>
-            ) : (
-              this.state.shoutout_post.map((post, index) => (
+  }
+
+  // routing to details page
+  goToCarddetails = (cardId) => {
+    // you can manage here to pass the clicked card id to the card details page if needed
+    localStorage.setItem("postId", cardId);
+    this.props.history.push("/applist/details");
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="header">
+          <h1 className="header-title">SHOUT-OUT</h1>
+          <p className="header-subtitle">Advertisement </p>
+        </div>
+        <Container>
+          {this.state.loading && !this.state.error ? (
+            <span>loading... </span>
+          ) : this.state.error ? (
+            <span>Couldn't get data: {this.state.errorMessage}</span>
+          ) : (
+            this.state.shoutout_post.map((post, index) => (
+              <div
+                className="theCards"
+                key={index}
+                onClick={() => this.goToCarddetails(post._id)}
+              >
                 <AppCard
-                  key={index}
                   title={post.title}
                   subtitle={post.sub_title}
                   tag={post.category}
@@ -91,12 +104,13 @@ class AppList extends React.Component {
                   bgPhoto={post.img}
                   cardSize={post.size}
                 />
-              ))
-            )}
-          </Container>
-        </div>
-      );
+              </div>
+            ))
+          )}
+        </Container>
+      </div>
+    );
   }
 }
 
-export default AppList;
+export default withRouter(AppList);

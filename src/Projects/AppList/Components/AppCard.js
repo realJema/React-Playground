@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Container = styled.div`
   grid-column: span ${(props) => props.cardSize} !important; // this changes the card's cardSize
   position: relative;
+  height: 100%;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0) 30%,
       rgba(0, 0, 0, 0.2) 40%,
@@ -109,7 +110,7 @@ const AppCard = ({
   totalReviews,
   ratingAverage,
 }) => (
-  <Container bgPhoto={bgPhoto} cardSize={cardSize}> {/* make sure to pass card cardSize value here */}
+  <Container bgPhoto={bgPhoto} cardSize={cardSize} > {/* make sure to pass card cardSize value here */}
     {tag && (
       <TagContainer tagBg={tagBg} color={tagColor}>
         <TagText>{tag}</TagText>

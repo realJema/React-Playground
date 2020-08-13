@@ -6,3 +6,34 @@
   font-weight: bold;
   font-size: 5em;
 }
+
+.details-page {
+    height: inherit; 
+    color: white;
+    font-family: roboto;
+}
+
+.details-page-title {
+  font-size:4em;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.details-page-description {
+      padding: 20px;
+    background: #0000009e;
+    margin: 30px;
+}
+
+.details-page-sub {
+  opacity: 0.8;
+  font-size: 1em;
+  margin-bottom: 2px !important;
+}
+
+.details-page-info {
+  font-size: 0.8em;
+}
+.details-page-header {
+    padding: 50px;
+}
