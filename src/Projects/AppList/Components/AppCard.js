@@ -117,11 +117,11 @@ const AppCard = ({
       </TagContainer>
     )}
     <Content>
-      <ContentColumn>
+      <ContentColumn className="this2">
         {(title || subtitle) && (
           <>
             <Title color={titleColor}>{title}</Title>
-            <Subtitle color={subtitleColor}>{subtitle}</Subtitle>
+            <Subtitle className="this2" color={subtitleColor}>{subtitle}</Subtitle>
           </>
         )}
         <ReviewsContainer>

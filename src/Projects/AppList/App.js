@@ -80,8 +80,8 @@ class AppList extends React.Component {
     return (
       <div>
         <div className="header">
-          <h1 className="header-title">SHOUT-OUT</h1>
-          <p className="header-subtitle">Advertisement </p>
+          <h1 className="header-title">HOLLO</h1>
+          <p className="header-subtitle">Explore some of the innovations in Cameroon </p>
         </div>
         <Container>
           {this.state.loading && !this.state.error ? (

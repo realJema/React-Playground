@@ -25,9 +25,6 @@ export default function Home() {
               <Link className="btn  btn-outline-dark" to="/counter">Counter</Link>
             </li>
             <li>
-              <Link className="btn  btn-outline-dark" to="/ads">Ads</Link>
-            </li>
-            <li>
               <Link className="btn  btn-outline-dark" to="/kanban">Kanban</Link>
             </li>
             <li>
