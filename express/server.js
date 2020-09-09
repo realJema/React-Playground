@@ -77,7 +77,7 @@ app.get('/native/api', function (req, res) {
   Description: get the data for the finder project
 */
 app.get('/native/api/finder/data', function (req, res) {
-  Finder.find(function (err, posts) {
+  mods.Finder.find(function (err, posts) {
     if (err) {
       res.status(401).send("Internal Server Error");
     } else {
@@ -108,7 +108,23 @@ app.get('/native/api/shoutout/data', function (req, res) {
     } else {
       // sending all the posts fetch from the database
       console.log("[" + getCurrentTime() + "] - Shoutout All Data fetched");
-      console.log(posts);
+      res.status(200).send(posts);
+    }
+  });
+});
+/*
+  Route: /native/api/shoutout/details
+  Type: POST
+  Description: get the details of a post
+*/
+app.post('/native/api/shoutout/details', function (req, res) {
+  const { postId } = req.body;
+  mods.Shoutout.find({ _id : postId }, function (err, posts) {
+    if (err) {
+      res.status(401).send("Internal Server Error");
+    } else {
+      // sending all the posts fetch from the database
+      console.log("[" + getCurrentTime() + "] - Shoutout Post Details fetched");
       res.status(200).send(posts);
     }
   });

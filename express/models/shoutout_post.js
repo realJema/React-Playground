@@ -11,10 +11,12 @@ const Shoutout = new Schema(
     sub_title: String,
     description: String,
     category: String,
+    showcase: Array,
     comments: Array,
     likes: String,
     author: String,
     location: String,
+    size: Number, // this is for the card size options(1, 2, 4)
     date: {
       day: Number,
       month: String,

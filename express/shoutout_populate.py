@@ -23,6 +23,7 @@ dataList = [
         "likes": 10,
         "author": "Alex Crawford Special correspondent @AlexCrawfordSky",
         "location": "beirut",
+        "size": "2",
         "date": {
             "day": 6,
             "month": "August",
