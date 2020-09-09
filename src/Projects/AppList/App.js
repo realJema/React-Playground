@@ -9,6 +9,7 @@ import { withRouter } from "react-router";
 // this creates a masonry grid with cards
 const Container = styled.div`
   padding: 50px;
+  justify-content: center;
   padding-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
