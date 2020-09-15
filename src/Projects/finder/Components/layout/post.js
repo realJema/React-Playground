@@ -8,15 +8,16 @@ class Post extends React.Component {
   }
   render() {
     return (
-      <div id={this.props.data._id.$oid} onClick={this.goToDetails.bind(this)} className="col-md-3 column place_card">
+      <div id={this.props.data._id.$oid} onClick={this.goToDetails.bind(this)} className="col-lg-3 col-md-4 col-sm-6 col-xs-12 column place_card">
         <div className="post-module">
           <div className="thumbnail">
             <div className="date">
-              <div className="day"> {this.props.data.date["day"]} </div>
-              <div className="month">Mar</div>
+              {/* <div className="day"> {this.props.data.date["day"]} </div> */}
+              {/* <div className="month">Mar</div> */}
             </div>
             <img
-              src={require("../images/" + this.props.data.img)}
+              // src={require("../images/" + this.props.data.img)}
+              src={this.props.data.img}
               alt="photos"
             />
           </div>

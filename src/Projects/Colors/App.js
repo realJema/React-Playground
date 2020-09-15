@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Colors extends React.Component {
 	render() {
 		return (
-			<Container>
+			<Container className="colors-container">
 				<Row className="rcontainer">
 					<Col className="hcenter">
-						<h1 className="title">Explore Colors</h1>
-						<p className="description">
+						<h1 className="colors-title">Explore Colors</h1>
+						<p className="colors-description">
 							The meaning of colors can vary depending on culture and circumstances. Each color has many
 							aspects to it but you can easily learn the language of color by understanding a few simple
 							concepts.
@@ -20,7 +20,7 @@ class Colors extends React.Component {
 							change from one day to the next with any individual, it all depends on what energy they are
 							expressing at that point in time.
 						</p>
-						<Row className="download">
+						<Row className="colors-download">
 							<Button>GET APP</Button>
 						</Row>
 					</Col>
