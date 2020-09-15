@@ -16,6 +16,9 @@ export default function Home() {
           <img className="logo" src={require('./logo.svg')} alt="native-logo" />
           <ul className="row">
             <li>
+              <Link className="btn  btn-outline-dark" to="/colors">Colors</Link>
+            </li>
+            <li>
               <Link className="btn  btn-outline-dark" to="/nativeschools">Schools</Link>
             </li>
             <li>

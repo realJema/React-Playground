@@ -10,6 +10,7 @@ import Finder from './Projects/finder/App';
 import WriterApp from './Projects/writerApp/App';
 import NativeSchools from './Projects/native-schools/App';
 import AppList from './Projects/AppList/App';
+import Colors from './Projects/Colors/App';
 import AppListDetails from './Projects/AppList/Components/Details';
 import AppList2 from './Projects/AppList/Components/examples/App';
 import Sponsors from './Projects/sponsors';
@@ -28,6 +29,9 @@ export default function App() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
+        <Route path="/colors">
+          <Colors />
+        </Route>
         <Route path="/applist/template">
           <AppList2 />
         </Route>

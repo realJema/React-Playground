@@ -1,0 +1,114 @@
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+.d-block, .carousel-item, .carousel-inner, .content, .carousel, .container, .rcontainer{
+  height: 100%;
+}
+
+.hcenter {
+  margin: auto;
+}
+
+.download {
+  padding: 12px;
+}
+.download > Button {
+  margin-right: 10px;
+}
+.title {
+  color: white;
+  font-size: 3.8rem;
+  letter-spacing: -.12rem;
+  font-family: Open Sans,sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.description {
+  color: white;
+  margin: 16px 0;
+  font-family: Open Sans,sans-serif;
+  font-weight: 400;
+    font-size: 1.2rem;
+}
+/* background animation  */
+.container {
+    margin: 0;
+    width: inherit;
+    padding: 0 10% !important;
+    max-width: 100% !important;
+	font-family: "Exo", sans-serif;
+	color: #fff;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+	background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite;
+	        animation: gradientBG 10s ease infinite;
+}
+.container {
+	width: 100%;
+}
+h1 {
+	font-weight: 900;
+}
+a {
+	text-decoration: none;
+	color: #212121;
+}
+@-webkit-keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
