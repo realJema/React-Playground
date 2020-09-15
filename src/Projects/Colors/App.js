@@ -20,14 +20,8 @@ class Colors extends React.Component {
 							change from one day to the next with any individual, it all depends on what energy they are
 							expressing at that point in time.
 						</p>
-            <Row className="download">
-							<Button>
-                ANDROID
-							</Button> 
-              
-							<Button>
-								IOS
-							</Button> 
+						<Row className="download">
+							<Button>GET APP</Button>
 						</Row>
 					</Col>
 					<Col className="hcenter">
@@ -37,33 +31,25 @@ class Colors extends React.Component {
 									<Carousel.Item>
 										<img
 											className="d-block w-100"
-											src="https://images.unsplash.com/photo-1599687350404-88b32c067289?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+											src={require('./Components/images/red.PNG')}
 											alt="First slide"
 										/>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
 											className="d-block w-100"
-											src="https://images.unsplash.com/photo-1599687350404-88b32c067289?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+											src={require('./Components/images/green.PNG')}
 											alt="Third slide"
 										/>
 
-										<Carousel.Caption>
-											<h3>Second slide label</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-										</Carousel.Caption>
 									</Carousel.Item>
 									<Carousel.Item>
 										<img
 											className="d-block w-100"
-											src="https://images.unsplash.com/photo-1599687350404-88b32c067289?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+											src={require('./Components/images/blue.PNG')}
 											alt="Third slide"
 										/>
 
-										<Carousel.Caption>
-											<h3>Third slide label</h3>
-											<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-										</Carousel.Caption>
 									</Carousel.Item>
 								</Carousel>
 							</div>
