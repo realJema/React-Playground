@@ -82,7 +82,7 @@ app.get('/native/api/finder/data', function (req, res) {
       res.status(401).send("Internal Server Error");
     } else {
       // sending all the posts fetch from the database
-      console.log("[" + getCurrentTime() + "] - Finder All Data fetched");
+      console.log("[" + getCurrentTime() + "] - Get All Data");
       res.status(200).send(posts);
     }
   });
