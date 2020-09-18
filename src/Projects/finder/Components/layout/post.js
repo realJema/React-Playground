@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Post extends React.Component {
   goToDetails = (e) => {
     var data = e.currentTarget.id;
-    console.log(data)
-    console.log(this.state)
+    localStorage.setItem('postId', data);
+	  this.props.history.push('/finder/details');
   }
   render() {
     return (
-      <div id={this.props.data._id.$oid} onClick={this.goToDetails.bind(this)} className="col-lg-3 col-md-4 col-sm-6 col-xs-12 column place_card">
+      <div id={this.props.data._id} onClick={this.goToDetails.bind(this)} className="col-lg-3 col-md-4 col-sm-6 col-xs-12 column place_card">
         <div className="post-module">
           <div className="thumbnail">
             <div className="date">
@@ -41,4 +42,4 @@ class Post extends React.Component {
     );
   }
 }
-export default Post;
+export default withRouter(Post);

@@ -3,18 +3,16 @@ import axios from 'axios';
 import './App.css';
 import Post from './Components/layout/post';
 import { reducer, initialState } from './Components/reducers/index';
-
+import BottomScrollListener from 'react-bottom-scroll-listener';
 
 const BACKEND_API = 'http://localhost:5000/native/api/finder/';
 
 const Finder = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
-
-	const { posts, errorMessage, loading, limit, last_value } = state;
-
+	const { posts, errorMessage, loading, last_value } = state;
 	// get data before component mounts
 	useEffect(() => {
-		//  loadMore();
+		loadMore();
 	}, []);
 
 	// search for a specific post
@@ -45,11 +43,8 @@ const Finder = () => {
 	// load more
 	const loadMore = () => {
 		axios
-			.get(BACKEND_API + 'data', {
-				params: {
-					limit: limit,
-					last_value: last_value,
-				},
+			.post(BACKEND_API + 'data', {
+				lastID: last_value,
 			})
 			.then((res) => {
 				dispatch({
@@ -98,19 +93,20 @@ const Finder = () => {
 					</div>
 					<div id="main_container" className="col-md-12 row">
 						{/* conditional in case db is inaccesible */}
+						{posts.map((post, index) => (
+							<Post data={post} key={index} />
+						))}
 						{loading && !errorMessage ? (
 							<span>loading... </span>
 						) : errorMessage ? (
 							<span>Couldn't get data: {errorMessage}</span>
 						) : (
-							posts.map((post, index) => <Post data={post} key={index} />)
+							<span>loading... </span>
 						)}
-					</div>
-					<div className="btn btn-primary" onClick={loadMore}>
-						Load more
 					</div>
 				</div>
 			</div>
+			<BottomScrollListener onBottom={loadMore} />
 		</div>
 	);
 };

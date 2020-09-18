@@ -25,7 +25,7 @@ export const initialState = {
       case "POST_DETAIL":
         return {
           ...state,
-          post: action.postId
+          post: action.post
         };
       case "LOAD_FAILURE":
         return {
