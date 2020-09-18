@@ -12,7 +12,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 // data schemas
-var mods = require("./models");
+var mods = require('./models');
 
 // Import the library:
 var cors = require('cors');
@@ -26,30 +26,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-
-// function to get the time for every fetch 
+// function to get the time for every fetch
 function getCurrentTime() {
-  var today = new Date();
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  var dateTime = date + ' ' + time;
-  return dateTime;
-};
-  
+	var today = new Date();
+	var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+	var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+	var dateTime = date + ' ' + time;
+	return dateTime;
+}
+
 // local database
 const mongo_uri = 'mongodb://localhost/nativedb';
 
-mongoose.connect(
-  mongo_uri,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  function (err) {
-    if (err) {
-      throw err;
-    } else {
-      console.log(`Successfully connected to ${mongo_uri}`);
-    }
-  }
-);
+mongoose.connect(mongo_uri, { useNewUrlParser: true, useUnifiedTopology: true }, function (err) {
+	if (err) {
+		throw err;
+	} else {
+		console.log(`Successfully connected to ${mongo_uri}`);
+	}
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -63,7 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   Description: Default route displaying information about api
 */
 app.get('/native/api', function (req, res) {
-  res.status(200).send("Welcome to the NATIVE api!");
+	res.status(200).send('Welcome to the NATIVE api!');
 });
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
@@ -73,24 +68,45 @@ app.get('/native/api', function (req, res) {
  * * * * * * * * * * * * * * * * * * * * * * * * */
 /*
   Route: /native/api/finder/data
-  Type: GET
+  Type: POST
   Description: get the data for the finder project
 */
-app.get('/native/api/finder/data', function (req, res) {
-  mods.Finder.find(function (err, posts) {
-    if (err) {
-      res.status(401).send("Internal Server Error");
-    } else {
-      // sending all the posts fetch from the database
-      console.log("[" + getCurrentTime() + "] - Get All Data");
-      res.status(200).send(posts);
-    }
-  });
+app.post('/native/api/finder/data', function (req, res) {
+	const { lastID } = req.body; /* ID of the last post */
+	// console.log(lastID);
+	mods.Finder.find(function (err, posts) {
+		if (err) {
+			res.status(401).send('Internal Server Error');
+		} else {
+			// sending all the posts fetch from the database
+			console.log('[' + getCurrentTime() + '] - Get All Data');
+			res.status(200).send(posts);
+		}
+	})
+		.limit(10)
+		.skip(lastID); /* limit the output and skip values already sent */
+});
+/*
+  Route: /native/api/finder/details
+  Type: POST
+  Description: get the data for the finder post
+*/
+app.post('/native/api/finder/details', function (req, res) {
+  const { postId } = req.body; /* ID of the last post */
+	mods.Finder.find({ _id: postId }, function (err, posts) {
+		if (err) {
+			res.status(401).send('Internal Server Error');
+		} else {
+			// sending all the posts fetch from the database
+      console.log('[' + getCurrentTime() + '] - Get Post Data');
+			res.status(200).send(posts[0]);
+		}
+	})
 });
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
-*  end: Finder Routes
-* * * * * * * * * * * * * * * * * * * * * * * * */
+ *  end: Finder Routes
+ * * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * * * *
  * project: Shoutout
  * route: /shoutout
@@ -102,15 +118,15 @@ app.get('/native/api/finder/data', function (req, res) {
   Description: get all posts from shoutout
 */
 app.get('/native/api/shoutout/data', function (req, res) {
-  mods.Shoutout.find(function (err, posts) {
-    if (err) {
-      res.status(401).send("Internal Server Error");
-    } else {
-      // sending all the posts fetch from the database
-      console.log("[" + getCurrentTime() + "] - Shoutout All Data fetched");
-      res.status(200).send(posts);
-    }
-  });
+	mods.Shoutout.find(function (err, posts) {
+		if (err) {
+			res.status(401).send('Internal Server Error');
+		} else {
+			// sending all the posts fetch from the database
+			console.log('[' + getCurrentTime() + '] - Shoutout All Data fetched');
+			res.status(200).send(posts);
+		}
+	});
 });
 /*
   Route: /native/api/shoutout/details
@@ -118,24 +134,24 @@ app.get('/native/api/shoutout/data', function (req, res) {
   Description: get the details of a post
 */
 app.post('/native/api/shoutout/details', function (req, res) {
-  const { postId } = req.body;
-  mods.Shoutout.find({ _id : postId }, function (err, posts) {
-    if (err) {
-      res.status(401).send("Internal Server Error");
-    } else {
-      // sending all the posts fetch from the database
-      console.log("[" + getCurrentTime() + "] - Shoutout Post Details fetched");
-      res.status(200).send(posts);
-    }
-  });
+	const { postId } = req.body;
+	mods.Shoutout.find({ _id: postId }, function (err, posts) {
+		if (err) {
+			res.status(401).send('Internal Server Error');
+		} else {
+			// sending all the posts fetch from the database
+			console.log('[' + getCurrentTime() + '] - Shoutout Post Details fetched');
+			res.status(200).send(posts);
+		}
+	});
 });
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
-*  end: Shoutout Routes
-* * * * * * * * * * * * * * * * * * * * * * * * */
+ *  end: Shoutout Routes
+ * * * * * * * * * * * * * * * * * * * * * * * * */
 // listening on this port
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}`);
+	console.log(`Server is running on PORT ${PORT}`);
 });

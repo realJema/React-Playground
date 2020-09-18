@@ -24,4 +24,4 @@ const Post = new Schema(
 );
 
 // export the new Schema so we could modify it using Node.js
-module.exports = mongoose.model("posts", Post);
+module.exports = mongoose.model("finder_posts", Post);

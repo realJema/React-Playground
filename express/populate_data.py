@@ -10,7 +10,7 @@ myclient = pymongo.MongoClient("mongodb://127.0.0.1:27017/") # connect to local 
 # myclient = pymongo.MongoClient("mongodb+srv://admin:neverSETTLE4anything!@nativenews.esbmn.mongodb.net/nativenews?retryWrites=true&w=majority") # connect to my cloud mongodb (password displayed!!!!)
 
 DB_NAME = 'nativedb'                                    # database name
-COLLECTION_NAME = 'shoutouts'                           # collection name
+COLLECTION_NAME = 'finder_posts'                           # collection name
 DATA_FILE = '_finder_data.json'                         # file containing data
 
 mydb = myclient[DB_NAME]                                # checks/creates database (upated <nativenews> with your db name)
