@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Post from './Components/layout/post';
+import Post from './Components/layout/Post';
 import { reducer, initialState } from './Components/reducers/index';
 import BottomScrollListener from 'react-bottom-scroll-listener';
 

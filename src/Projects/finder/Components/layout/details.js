@@ -2,6 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import { reducer, initialState } from '../reducers/index';
 import axios from 'axios';
 
+
 const BACKEND_API = 'http://localhost:5000/native/api/finder/';
 const Details = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);

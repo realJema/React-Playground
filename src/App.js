@@ -17,11 +17,11 @@ import Sponsors from './Projects/sponsors';
 import ComingSoon from './Projects/comingSoon';
 import Home from './Projects/Home';
 import Missions from "./Projects/missions";
+import Details from "./Projects/finder/Components/layout/Details";
 
 // importing bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import Details from "./Projects/finder/Components/layout/details";
 
 export default function App() {
   return (
