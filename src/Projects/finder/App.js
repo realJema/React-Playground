@@ -96,17 +96,20 @@ const Finder = () => {
 						{posts.map((post, index) => (
 							<Post data={post} key={index} />
 						))}
-						{loading && !errorMessage ? (
-							<span>loading... </span>
-						) : errorMessage ? (
-							<span>Couldn't get data: {errorMessage}</span>
-						) : (
-							<span>loading... </span>
-						)}
 					</div>
 				</div>
 			</div>
-			<BottomScrollListener onBottom={loadMore} />
+			{/* <BottomScrollListener onBottom={loadMore} /> */}
+
+			{loading && !errorMessage ? (
+				<span>loading... </span>
+			) : errorMessage ? (
+				<span>Couldn't get data: {errorMessage}</span>
+			) : (
+				<button type="button" class="btn btn-primary finder-load_more" onClick={loadMore}>
+					Load more ...
+				</button>
+			)}
 		</div>
 	);
 };

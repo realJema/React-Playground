@@ -6,6 +6,7 @@
 	padding: 0;
 	min-height: 100%;
 	max-height: fit-content;
+	padding-bottom: 50px;
 }
 .place_card {
 	transition: 2s ease-in-out;
@@ -239,4 +240,64 @@
 }
 .container .info span .fa {
 	color: #e74c3c;
+}
+
+.finder-details {
+    width: 50%;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.finder-details-image {
+	margin-top: 5%;
+	width: 68%;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+    height: 500px;
+    object-fit: cover;
+}
+
+.finder-details-title {
+	margin: 0 0 .8em;
+	font-size: 3rem;
+    text-rendering: optimizeLegibility;
+    color: var(--color-base);
+    line-height: 1.15;
+}
+
+.finder-details-category {
+	font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.finder-details-author, .finder-details-location {
+	padding: 5px;
+	font-weight: 300;
+}
+
+.finder-details-sub_title{
+	font-size: 1.2rem;
+	margin: 1.8em 0;
+  font-style: italic;
+}
+.finder-details-description {
+	font-size: 2rem;
+	margin: .8em 0;
+}
+
+.finder-details-likes {
+	margin: 0;
+	padding: 0 5px;
+}
+
+.finder-details-like{
+	align-items: center;
+}
+
+.finder-load_more {
+	display: block !important;
+	margin: auto;
+	margin-top: 50px;
 }
