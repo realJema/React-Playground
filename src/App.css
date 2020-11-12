@@ -44,5 +44,6 @@ footer {
     position: absolute;
 }
 .footer {
+    margin-left: 20px;
     color: black;
 }

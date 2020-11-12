@@ -2,7 +2,7 @@ import React from "react";
 import {
   Link
 } from "react-router-dom";
-import "./App.css";
+import "../App.css";
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Home() {
     return (
 		<div className="main_container">
-			<img className="logo" src={require('./logo.svg')} alt="native-logo" />
+			<img className="logo" src={require('../logo.svg')} alt="native-logo" />
 			<br />
 			<ul className="row">
 				<li>
@@ -34,12 +34,25 @@ export default function Home() {
 					</a>
 				</li>
 				<li>
+					<a
+						className="btn  btn-outline-dark"
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://covid19.native237.com"
+					>
+						COVID19 Cameroun
+					</a>
+				</li>
+				<li>
 					<Link className="btn  btn-outline-dark" to="/colors">
 						Colors
 					</Link>
 				</li>
 			</ul>
-			<footer>
+			<footer className="row">
+				<Link className="footer" to="/missions">
+					<p>Missions & Vision</p>
+				</Link>
 				<Link className="footer" to="/sponsors">
 					<p>Sponsored by</p>
 				</Link>

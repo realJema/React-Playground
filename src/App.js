@@ -5,8 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import Colors from './Projects/Colors/App';
-import Sponsors from './sponsors';
-import Home from './Home';
+import Sponsors from './Views/Sponsors';
+import Missions from './Views/Missions';
+import Home from './Views/Home';
 
 export default function App() {
   return (
@@ -19,6 +20,9 @@ export default function App() {
           </Route>
           <Route path="/sponsors">
             <Sponsors />
+          </Route>
+          <Route path="/missions">
+            <Missions />
           </Route>
           <Route path="/">
             <Home />
