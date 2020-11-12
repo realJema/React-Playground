@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Home() {
     return (
 		<div className="main_container">
-			<h1 className="brand">NATIVE</h1>
+			<img className="logo" src={require('./logo.svg')} alt="native-logo" />
 			<br />
 			<ul className="row">
 				<li>
